@@ -1,0 +1,5 @@
++ 200€	16/05/2025: busta paga
++ 500€	16/05/2025: deposito da conto primo: busta paga
+- 500€	16/05/2025: bollo auto
+- 200€	16/05/2025: spesa
+
