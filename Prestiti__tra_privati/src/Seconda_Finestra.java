@@ -263,9 +263,18 @@ public class Seconda_Finestra extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonPrelevaSaldoActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String input = JOptionPane.showInputDialog(this, "Inserisci la nuova password:");
-        Password.scriviPassword(input);
-        JOptionPane.showMessageDialog(this, "Password cambiata con successo!", "Successo", JOptionPane.PLAIN_MESSAGE);
+        String passwd = JOptionPane.showInputDialog(this, "Inserisci la password per confermare la tua identità:");
+        if(Password.controllaPassword(passwd))
+        {
+            String input = JOptionPane.showInputDialog(this, "Inserisci la nuova password:");
+            if(Password.setPassword(passwd, input))
+            {
+                JOptionPane.showMessageDialog(this, "Password cambiata con successo!", "Successo", JOptionPane.PLAIN_MESSAGE);
+                return;
+            }
+        }
+        JOptionPane.showMessageDialog(this, "Errore: password non corretta!", "Errore", JOptionPane.ERROR_MESSAGE);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {

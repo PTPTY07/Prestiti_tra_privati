@@ -10,7 +10,7 @@ public class Password
     private static final String FILE_PASSWORD = "password.txt";
 
     // Funzione per salvare la password criptata
-    public static void scriviPassword(String password) {
+    private static void scriviPassword(String password) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PASSWORD))) {
             String passwordCriptata = Base64.getEncoder().encodeToString(password.getBytes());
             bw.write(passwordCriptata);
@@ -21,6 +21,15 @@ public class Password
         
     }
 
+    public static boolean setPassword(String passwd, String nuovaPasswd)
+    {
+        if(controllaPassword(passwd))
+        {
+            scriviPassword(nuovaPasswd);
+            return true;
+        }
+        return false;
+    }
     
     // Funzione per leggere la password criptata e decriptarla
     private static String leggiPassword() {
@@ -39,7 +48,8 @@ public class Password
         return linea;
     }
     
-    public static boolean ControllaPassword(String passwd)
+    //Si rende inacessibile la password dall'esterno
+    public static boolean controllaPassword(String passwd)
     {
         if(passwd.equals(leggiPassword()))
         {
