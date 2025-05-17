@@ -16,8 +16,8 @@ public class CContoPrimo
     
     public CContoPrimo()
     {
-        pathSaldoDisponibile = "C:\\Users\\User\\Documenti\\NetBeansProjects\\BancaGUI-Copia\\saldodisponibile.txt";
-        pathTransazioniSaldoDisponibile = "C:\\Users\\User\\Documenti\\NetBeansProjects\\BancaGUI-Copia\\transazioniSaldoDisponibile.txt";
+        pathSaldoDisponibile = "saldodisponibile.txt";
+        pathTransazioniSaldoDisponibile = "transazioniSaldoDisponibile.txt";
         saldodisponibile = LeggiSaldoDisponibileFile();
     }
     

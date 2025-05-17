@@ -7,7 +7,7 @@ import java.util.Base64;
 
 public class Password 
 {
-    private static final String FILE_PASSWORD = "C:\\Users\\User\\Documenti\\NetBeansProjects\\BancaGUI-Copia\\password.txt";
+    private static final String FILE_PASSWORD = "password.txt";
 
     // Funzione per salvare la password criptata
     public static void scriviPassword(String password) {
@@ -21,8 +21,9 @@ public class Password
         
     }
 
+    
     // Funzione per leggere la password criptata e decriptarla
-    public static String leggiPassword() {
+    private static String leggiPassword() {
         String linea = "";
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_PASSWORD))) {
             linea = br.readLine();
@@ -36,5 +37,14 @@ public class Password
             e.printStackTrace();
         }
         return linea;
+    }
+    
+    public static boolean ControllaPassword(String passwd)
+    {
+        if(passwd.equals(leggiPassword()))
+        {
+            return true;
+        }
+        return false;
     }
 }

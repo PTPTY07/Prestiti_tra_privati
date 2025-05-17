@@ -16,8 +16,8 @@ public class CConto
     
     public CConto()
     {
-        pathConto = "C:\\Users\\User\\Documenti\\NetBeansProjects\\BancaGUI-Copia\\conto.txt";
-        pathTransazioniConto = "C:\\Users\\User\\Documenti\\NetBeansProjects\\BancaGUI-Copia\\transazioniConto.txt";
+        pathConto = "conto.txt";
+        pathTransazioniConto = "transazioniConto.txt";
         conto = LeggiContoFile();
     }
     

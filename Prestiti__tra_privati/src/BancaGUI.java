@@ -287,7 +287,7 @@ public class BancaGUI extends javax.swing.JFrame {
         String input = JOptionPane.showInputDialog(this, "Inserisci la password:");
 
         if (input != null) { // Controlla che non abbia premuto "Annulla"
-            if (input.equals(Password.leggiPassword())) {  // Controlla password corretta
+            if (Password.ControllaPassword(input)) {  // Controlla password corretta
                 
                 setState(JFrame.ICONIFIED); // Minimizza finestra corrente
                 
@@ -321,7 +321,7 @@ public class BancaGUI extends javax.swing.JFrame {
             String input = JOptionPane.showInputDialog(this, "Inserisci la password:");
 
             if (input != null) {
-                if (input.equals(Password.leggiPassword())) {
+                if (Password.ControllaPassword(input)) {
 
                     setState(JFrame.ICONIFIED);
 
